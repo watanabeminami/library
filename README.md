@@ -1,2 +1,2 @@
 # library
-js-library
+jsの自分用ライブラリーです
