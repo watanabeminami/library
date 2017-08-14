@@ -1,0 +1,31 @@
+<!-- title -->
+<!DOCTYPE html> <!--1行目に必ず書く。４の場合は違う形-->
+<html lang="ja">　<!--htmlのルート要素。検索エンジンの翻訳の助けになる。-->
+<head>
+		<meta charset="UTF-8"><!--文字コードセット。大文字小文字どちらでもok-->
+		<meta name="description" content="ページの概要"><!--検索ページで使用。普通に開いたら出ない-->
+		<meta name="keywords" content="キーワード,キーワード２"><!--悪用されたから今は使われてない-->
+    <titl>タイトル</titl><!--ブラウザのタブや検索エンジンのタイトルに表示。30,40文字に納めるのが理想-->
+
+		<link rel="stylesheet" href="cssファイルへのパス"><!--cssファイルを読み込む-->
+		<style>/*cssをhtmlに追加する*/
+			@charset "UTF-8";/*cssファイルの文字コードセット一行目に書く。コメントアウトや日本語の含まれる文字が文字化けする。*/
+		</style>
+
+		<script src="jsファイルのパス"></script><!--jsファイルを読み込む。終了タグは必ず書く。type属性はいらなくなった-->
+		<script>プログラム</script><!--jsを直接書く-->
+		<noscript>
+				表示するコンテンツ
+		</noscript><!--jsが動作しない時に表示するコンテンツ。現在はあまりいらない-->
+
+</head>
+
+<!-- html -->
+<body>
+	<a href="" style="color:red"></a><!--cssをタグに直接書く場合-->
+</body>
+
+<!-- js -->
+<script type="text/javascript">
+</script>
+</html>
