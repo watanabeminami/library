@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">　
+<head>
+		<meta charset="UTF-8">
+		<style>
+		</style>
+</head>
+<body>
+	<h3>ol,ul</h3>
+	<p>-１以外の数字からリストを開始する方法.olにstart属性に数字入れる</p>
+	<ol start="2"><li>りんご</li><li>みかん</li></ol>
+	<p>-箇条書きの、マークを画像にする。その１<br>list-style:url()に指定。昔は使いづらかったが今は使いやすい。</p>
+	<ul style="list-style:url(./img/asterisk.png)"><li>りんご</li><li>ごりら</li></ul>
+	<p>-箇条書きの、マークを画像にする。その2<br>backgrouhdで指定。こっちの方が一般的。</p>
+	<ul style="list-style:none;"><li style="background:url(./img/asterisk.png)no-repeat; padding-left:20px;">りんご</li><li style="background:url(./img/asterisk.png)no-repeat; padding-left:20px;">ごりら</li></ul>
+	<h3>dl</h3>
+	<p>-キーワードと説明をセットでいくつか箇条書きしたときはdl(dt dd)</p>
+	<p>-日時とその日の出来事、単語と説明、みだしとその内容を書くときにこのタグを使う</p>
+	<p>-dl,dt,ddを横並びにする場合。dlにoverflow:hideen。dtにfloat:left</p>
+	<dl style="overflow:hidden;"><dt style="float:left;">dt</dt><dd>dddddd</dd></dl>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">　
+<head>
+		<meta charset="UTF-8">
+		<style>
+		.red {
+			color: red;
+		}
+		.black {
+			background-color: #000000;
+			vertical-align: top;
+		}
+		</style>
+</head>
+<body>
+	<h3>div</h3>
+	<p>-divには基本的にclassをつけよう</p>
+	<p>-記事やセクションのボックスを作る
+		<br>articleはそれだけで独立するコンテンツ、コピペしても意味が通じるもの
+		<br>sectionはページの一章、articleをsectionでかこうことも多い。h1とpがセットになってたらこれ。
+	</p>
+	<p>-図とキャプションを表示するfigureとfigcaption。デフォルトcssが曲者なのでそれを消してから使用することが望ましい。</p>
+	<figure>
+		<img src="img/グラフ.png" alt="">
+		<figcaption>アンケート結果</figcaption>
+	</figure>
+	<p>-他のhtmlを表示する場合、iframeを使う。ボーダーを消せば埋め込みだと気がつかない、たまに使う方法。</p>
+	<iframe src="chap6-page.HTML" width="500px" height="300px"></iframe>
+	<p>-隣接するマージンはたたみこみがおこるが、どちらかがフロート、ポジション、フレックスボックス等の横並び系だと畳み込まれない。</p>
+	<p>-幅や高さを指定できるのはブロックボックスと一部のインラインボックス（imgやinput）のみ</p>
+	<p>-大きさを決めてoverflow: scrollにするとスクロールバーを表示できる</p>
+	<div class="overflow">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
+	<style>
+	.overflow{
+		width: 100px;
+		height: 100px;
+		overflow: scroll;
+	}
+	</style>
+	<p>-おさまらなかった文字を省略するtext-overflowと開業の制御をする</p>
+	<div class="picture">
+		<p>省略省略省略省略省略省略省略省略省略省略省略省略</p>
+	</div>
+	<style>
+	.picture {
+		width: 200px;
+		height: 1.5em;
+		overflow: hidden;
+	}
+	.picture p{
+		overflow: hidden;
+		white-space: nowrap;
+		margin: 0;
+		text-overflow: ellipsis;
+	}
+	</style>
+	<p><em class="red">-vertical-alignは揃えたい要素自体にあてることに注意</em><br>
+	インライン要素の縦方向にいくつかあるものを揃える役割。画像とテキストの上下方向の位置を揃えるなど</p>
+<div class="vertical">
+	<img src="img/SVGアイコン.svg" alt="" width="30px"><span>文章</span>
+</div>
+	<style>
+	.vertical {
+		border: 1px solid green;
+	}
+		.vertical *{
+			display: inline;
+			vertical-align: middle;
+		}
+	</style>
+	<p><em class="red">-ボックスと画像の下の隙間をなくすvertical-align</em><br>
+	右側は画像にvertical-align:middleをいれたもの
+	</p>
+	<div class="black" style="display: inline-block;">
+		<img src="img/photo.png" alt="" width="200px" >
+	</div>
+	<div class="black" style="display: inline-block;">
+		<img src="img/photo.png" alt="" width="200px"  style="vertical-align: middle;">
+	</div>
+	<p>-backgroundのプロパティについて</p>
+	<p>background:-color -image -position /-size -repeat -attachmentの順。
+		<br>ただし-sizeのみ/が必要なので、個別で書くことが多い</p>
+	<p>background-position:left 30px top 30px;など指定できる。その位置からの距離を指定できる。
+		０なら省略可能</p>
+	<p>background-size:contain 背景画像をボックスにあわせてリサイズなど</p>
+	<p>background-attachment:fixedで画像の位置を固定。</p>
+	<p>-背景にグラデーションをかけるいろいろ<br>photoshopにはこれをcssで書き出す機能あり</p>
+	<div class="gradient"><p>linear-gradient(角度,始色,終色) <br>0degは下から上へ。基準は180deg</p></div>
+	<style>
+	.gradient {
+		width: 300px;
+		height: 200px;
+		background-image: linear-gradient(45deg, #FF7F82, #DCFFB8);
+	}
+	</style>
+	<div class="gradient-radi"><p>radial-gradient(始色,終色)</p></div>
+	<style>
+	.gradient-radi {
+		width: 300px;
+		height: 200px;
+		background-image: radial-gradient(#FF7F82, #DCFFB8);
+	}
+	</style>
+
+</body>
+</html>

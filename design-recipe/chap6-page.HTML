@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">　
+<head>
+		<meta charset="UTF-8">
+		<style>
+		</style>
+</head>
+<body>
+	<h3>bodyタグ</h3>
+	<p>-ページ全体にかかっているmargin８pxをとりあえず無しにする。</p>
+	<style>body{margin: 0;}</style>
+	<p>-ページ全体に色をつける</p>
+	<style>body{background-color: #ddffff;}</style>
+	<p>-ページ全体のフォントを指定 "フォント","フォント" と指定していく。最後には絶対sans-serifかserifを指定。またその二つは””いらない</p>
+	<style>body{font-family:sans-serif;}</style>
+	<p>-背景画像の位置をスクロールしてもかわらないように固定させる<br>background-attachmentを使う</p>
+	<img src="img/スクリーンショット 2017-08-20 16.47.48.png" alt="" width="100px">
+	<style>
+		body{
+			height: 2000px;
+			background:url(img/flag.jpg) repeat-x;
+			background-attachment: fixed;/*これもbackgroundにふくめられる*/
+			}
+	</style>
+	<p>-背景にグラデーションをかける background:liner-gradient()を利用</p>
+	<style>
+		body{
+			background:linear-gradient(#9AB4CF,#DCFFD8);/*背景色ではなく画像扱いであることに注意*/
+		}
+		html{
+			min-height: 100%;/*これ忘れると途中で途切れることがある*/
+		}
+	</style>
+	<h3>その他</h3>
+	<dl>
+		<dt>リセットcss</dt>
+		<dd>デフォルトcssのほぼ全てを消すもの。少し前のサイトにはよくついている。どのタグで書いてもほとんと同じ作りで表示される</dd>
+	</dl>
+	<dl>
+		<dt>ノーマライズcss</dt>
+		<dd>デフォルトcssは可能な限り残しつつ、ブラウザ間で誤差があるものだけを微調整するように作られたライブラリ</dd>
+	</dl>
+	<dl>
+		<dt>サニタイズcss</dt>
+		<dd>ノーマライズcssをベースにもう少し踏み込んだ新しいライブラリ</dd>
+	</dl>
+</body>
+</html>
