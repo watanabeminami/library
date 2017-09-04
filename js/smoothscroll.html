@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html lang="ja" class="lte-ie8 no-js" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"><![endif]-->
+<!--[if (gt IE 8)|!(IE)]><!--><html lang="ja" class="no-js" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"><!--<![endif]-->
+<head>
+   <meta charset="UTF-8">
+   <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+   <title>smoth scroll</title>
+   <style>
+   body {
+       padding: 0;
+       margin: 0;
+   }
+   .navigator {
+       position: fixed;
+       top; 0;
+       right: 10px;
+       list-style: none;
+       display: flex;
+   }
+   .navigator li {
+       margin-left: 10px;
+       background-color: #FFFFFF;
+       border: 1px solid #00AAAA;
+       padding: 5px 8px;
+       z-index: 100;
+   }
+    .container {
+        height: 1000px;
+    }
+    .background1{
+        background-color: #3388DD;
+    }
+    .background2{
+        background-color: #AA9C12;
+    }
+    .background3{
+        background-color: #00AAAA;
+    }
+   </style>
+</head>
+<body>
+    <ul class="navigator">
+        <li><a href="#container1">要素１へ</a></li>
+        <li><a href="#container2">要素２へ</a></li>
+        <li><a href="#container3">要素３へ</a></li>
+    </ul>
+    <div class="container background1" id="container1">要素１</div>
+    <div class="container background2" id="container2">要素2</div>
+    <div class="container background3" id="container3">要素3</div>
+</body>
+<script>
+    var LEIHAUOLI_PROJECT = LEIHAUOLI_PROJECT || {};/*enter name of project*/
+    LEIHAUOLI_PROJECT.SAMPLE = {}; /*enter name of js.file, or delete*/
+    LEIHAUOLI_PROJECT.SAMPLE.SMOOTH_SCROLL = {
+        init: function(){
+            this.setParameters();
+            this.bindEvent();
+        },
+        setParameters : function(){
+            this.$htmlAndBody = $('thml,body');
+            this.$button = $('a[href^=#]');
+            this.speed = 700;
+        },
+        bindEvent : function(){
+            var myself = this;
+            this.$button.on('click',function(event){
+                event.preventDefault();
+                var href = $(this).attr('href');
+                var destination = $(href == "#" || href == "" ? 'html' : href);
+                var position = destination.offset().top;
+                myself.$htmlAndBody.animate({scrollTop:position}, this.speed );
+            })
+        }
+    }
+    $(window).on('load',function(){
+    LEIHAUOLI_PROJECT.SAMPLE.SMOOTH_SCROLL.init();
+  });
+
+</script>
+</html>

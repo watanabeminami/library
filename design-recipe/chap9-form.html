@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">　
+<head>
+	<title>chap7</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<h3>フォームの基本</h3>
+	<p>formタグのactionには送信先urlを、methodにはGETかPOSTを<br>
+	inputにはtype属性とname属性必要、nameはサーバーサイドに確認すること</p>
+	<form action="送信先url" method="GET">
+		<h4>formタグ入力欄の種類</h4>
+		<p>text…短いテキスト入力</p>
+		<p>ラベルをつける方法１　labelタグで囲う</p>
+		<label>名前<input type="text" name="text-name"></label>
+		<input type="button" value="送信">
+
+		<p>ラベルをつける方法２　for属性にidを入れる</p>
+		<label for="id-name">名前</label><input type="text" name="text-name" id="id-name">
+		<input type="button" value="送信">
+
+		<p>email…メールアドレスかどうかチェックしてくれる</p>
+		<label>メールアドレス<input type="email" name="mail"></label>
+		<input type="button" value="送信">
+
+		<p>tel…spの時電話番号用のキーボードをだしてくれる</p>
+		<label>電話番号<input type="tel" name="phone"></label>
+		<input type="button" value="送信">
+
+		<p>password…何をいれても丸で書かれる</p>
+		<label>パス<input type="password" name="pass"></label>
+		<input type="button" value="送信">
+
+		<h4>入力欄につける属性</h4>
+		<p>入力のヒントをいれたい時のplaceholder</p>
+		<label>パス<input type="text" name="text" placeholder="こんな感じ"></label>
+		<input type="button" value="送信">
+
+		<p>自動で選択されるautofocus（ブール属性）</p>
+		<label>パス<input type="text" name="text" placeholder="自動選択" autofocus></label>
+		<input type="button" value="送信">
+
+		<p>必須項目にできるrequired（ブール属性）</p>
+		<label>パス<input type="text" name="text" placeholder="必須項目" required></label>
+		<input type="button" value="送信">
+
+		<p>コピーのみ可能なreadonly（ブール属性）</p>
+		<label>パス<input type="text" name="text" value="読み取り専用" readonly></label>
+		<input type="button" value="送信">
+
+		<h4>入力欄以外のinput</h4>
+		<p>ファイルをアップロードする</p>
+		<label>アップロード<input type="file" name="text"></label>
+
+		<p>ラジオボタン…選べるのは一つ（カーラジオの器具からきている）　nameは一緒にvalueは別に</p>
+		<label>male<input type="radio" name="jender" value="male"></label>
+		<label>female<input type="radio" name="jender" value="female"></label>
+
+		<p>チェックボックス…いくつも選べて解除もできる。そのため選択肢が一つしかない場合もこれ</p>
+		<label>同意しますか？<input type="checkbox" name="jender" ></label>
+
+		<p>セレクト…プルダウンメニューを表示。selectタグにname,optionタグにvalueをつける
+		<br>たくさんの選択肢があって面積が足りない時や、スマホでの操作のしやすいさを考えるときに使う、
+		</p>
+		<select name="" id="">
+			<option value="" selected>選ベぇ</option>
+			<option value="tokyo">東京</option>
+			<option value="aichi">愛知</option>
+		</select>
+
+		<p>複数を選択できるリストを作るmultiple属性　コマンド押しながら選択すると複数選べる、でもあんまり使わない</p>
+		<select name="" id="" multiple>
+			<option value="" selected>選ベぇ</option>
+			<option value="tokyo">東京</option>
+			<option value="aichi">愛知</option>
+		</select>
+
+		<p>プルダウンメニューをグループ化</p>
+		<select name="" id="" >
+			<option value="" selected>選ベぇ</option>
+			<option value="tokyo">東京</option>
+			<option value="aichi">愛知</option>
+			<option value="aichi">セブ</option>
+			<option value="aichi">マクタン</option>
+		</select>
+	</form>
+</body>
+</html>

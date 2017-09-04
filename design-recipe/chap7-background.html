@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">　
+<head>
+	<title>chap7</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<h3>background</h3>
+	<p>-backgroundのプロパティについて</p>
+	<p>background:-color -image -position /-size -repeat -attachmentの順。
+		<br>ただし-sizeのみ/が必要なので、個別で書くことが多い</p>
+	<p>background-position:left 30px top 30px;など指定できる。その位置からの距離を指定できる。
+		０なら省略可能</p>
+	<p>background-size:contain 背景画像をボックスにあわせてリサイズなど</p>
+	<p>background-attachment:fixedで画像の位置を固定。</p>
+	<p>-背景にグラデーションをかけるいろいろ<br>photoshopにはこれをcssで書き出す機能あり</p>
+	<div class="gradient"><p>linear-gradient(角度,始色,終色) <br>0degは下から上へ。基準は180deg</p></div>
+	<style>
+	.gradient {
+		width: 300px;
+		height: 200px;
+		background-image: linear-gradient(45deg, #FF7F82, #DCFFB8);
+	}
+	</style>
+	<div class="gradient-radi"><p>radial-gradient(始色,終色)</p></div>
+	<style>
+	.gradient-radi {
+		width: 300px;
+		height: 200px;
+		background-image: radial-gradient(#FF7F82, #DCFFB8);
+	}
+	</style>
+	<div>
+		<p>-横方向にだけ画像を繰り返す。b-repeat:repeat-x</p>
+		<div class="yoko"></div>
+	</div>
+	<style>
+		.yoko {
+			background-image: url(img/asterisk.png);
+			background-repeat: repeat-x;
+			/*もしくは*/
+			background: url(img/asterisk.png) repeat-x;
+			height: 20px;
+		}
+	</style>
+	<div>
+		<p>-背景を真ん中に配置する。</p>
+		<div class="center"></div>
+	</div>
+	<style>
+		.center {
+			height: 100px;
+			width: 300px;
+			border: 1px solid #000000;
+
+			background: url(img/asterisk.png) no-repeat;
+			background-position: center center;
+			/*もしくは*/
+			background: url(img/asterisk.png) center center no-repeat;
+			/*もしくは*/
+			background-position:left 50% top 50%;
+		}
+	</style>
+	<div>
+		<p>-背景を好きな位置に配置する。</p>
+		<div class="randam"></div>
+	</div>
+	<style>
+		.randam {
+			height: 100px;
+			width: 300px;
+			border: 1px solid #000000;
+			background: url(img/asterisk.png) no-repeat;
+			background-position: left 30px top 10px;
+		}
+	</style>
+	<p>-背景画像をサイズに合わせて変化させる。background-size:containとcover</p>
+	<p>1.contain　ボックスに入るサイズ</p>
+	<div class="variable1"></div>
+	<style>
+	.variable1 {
+		height: 100px;
+		width: 300px;
+		background: url(img/photo.png) center center no-repeat;
+		background-size: contain;
+		background-color: #0099CC;
+	}
+	</style>
+	<p>2.cover ボックス全体を覆う（カバーするサイズ）</p>
+	<div class="variable2"></div>
+	<style>
+	.variable2 {
+		height: 100px;
+		width: 300px;
+		background: url(img/photo.png) center center no-repeat;
+		background-size: cover;
+		background-color: #CC1100;
+	}
+	</style>
+	<p>複数の背景は","でくぎれる。先に書いたものほど上になるので背景書は最後</p>
+	<div class="multiple"></div>
+	<style>
+	.multiple {
+		height: 100px;
+		width: 300px;
+		background:  url(img/asterisk.png) left 10px top 10px no-repeat,
+			url(img/asterisk.png) center center no-repeat,
+			url(img/asterisk.png) left 40px top 70px no-repeat;
+
+		background-color: #CCDDEE;
+	}
+	</style>
+</body>
+</html>

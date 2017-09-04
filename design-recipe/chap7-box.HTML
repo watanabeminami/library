@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">　
 <head>
-		<meta charset="UTF-8">
-		<style>
-		.red {
-			color: red;
-		}
-		.black {
-			background-color: #000000;
-			vertical-align: top;
-		}
-		</style>
+	<title>chap7</title>
+	<meta charset="UTF-8">
+	<style>
+	.red {
+		color: red;
+	}
+	.black {
+		background-color: #000000;
+		vertical-align: top;
+	}
+	</style>
 </head>
 <body>
 	<h3>div</h3>
@@ -77,30 +78,42 @@
 	<div class="black" style="display: inline-block;">
 		<img src="img/photo.png" alt="" width="200px"  style="vertical-align: middle;">
 	</div>
-	<p>-backgroundのプロパティについて</p>
-	<p>background:-color -image -position /-size -repeat -attachmentの順。
-		<br>ただし-sizeのみ/が必要なので、個別で書くことが多い</p>
-	<p>background-position:left 30px top 30px;など指定できる。その位置からの距離を指定できる。
-		０なら省略可能</p>
-	<p>background-size:contain 背景画像をボックスにあわせてリサイズなど</p>
-	<p>background-attachment:fixedで画像の位置を固定。</p>
-	<p>-背景にグラデーションをかけるいろいろ<br>photoshopにはこれをcssで書き出す機能あり</p>
-	<div class="gradient"><p>linear-gradient(角度,始色,終色) <br>0degは下から上へ。基準は180deg</p></div>
+	<p>borderを画像にする</p>
+	<div class="border-image"></div>
 	<style>
-	.gradient {
-		width: 300px;
-		height: 200px;
-		background-image: linear-gradient(45deg, #FF7F82, #DCFFB8);
-	}
+		.border-image {
+			height: 100px;
+			width: 300px;
+			border-image-source: url(img/bg_dot.png) ;
+			border-image-slice: 4;
+			border-style:solid;
+			 border-width:10px;
+		}
 	</style>
-	<div class="gradient-radi"><p>radial-gradient(始色,終色)</p></div>
+	<p>-ドロップシャドウのプロパティ</p>
+	<p>box-shadow:縦方向のズレ　横方向のズレ　ぼかし量(px)　拡張量(どれだけ影を大きくするか)　色</p>
+	<div class="box-shadow">box-shadow: 3px 3px 30px 3px #000000;</div>
 	<style>
-	.gradient-radi {
-		width: 300px;
-		height: 200px;
-		background-image: radial-gradient(#FF7F82, #DCFFB8);
-	}
+		.box-shadow {
+			font-size: 12px;
+			text-align: center;
+			line-height: 100px;
+			height: 100px;
+			width: 300px;
+			box-shadow: 3px 3px 30px 3px #000000;
+		}
 	</style>
-
+	<p>ボックスの内側に影をつけるinset</p>
+	<div class="box-shadow2">box-shadow: inset 3px 3px 30px 3px #000000;</div>
+	<style>
+		.box-shadow2 {
+			font-size: 12px;
+			text-align: center;
+			line-height: 100px;
+			height: 100px;
+			width: 300px;
+			box-shadow: inset 3px 3px 30px 3px #000000;
+		}
+	</style>
 </body>
 </html>
