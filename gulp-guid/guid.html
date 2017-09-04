@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html lang="ja" class="lte-ie8 no-js" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"><![endif]-->
+<!--[if (gt IE 8)|!(IE)]><!--><html lang="ja" class="no-js" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"><!--<![endif]-->
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>いつ見てもわかるgulpガイド</title>
+   <style>
+   body {
+	   background-color: #f5f2f0;
+       font-family: Helvetica,"ヒラギノ角ゴ Pro W3",Hiragino Kaku Gothic Pro,"メイリオ",Meiryo,sans-serif;
+	   line-height: 1.8;
+	   margin: 0;
+   }
+   main {
+   		background-color: #FFFFFF;
+		min-height: 100vh;
+	   	width: 650px;
+		padding: 15px;
+		margin: auto;
+   }
+   dt {
+   	font-weight: bold;
+   }
+   pre {
+   	background-color: #f5f2f0;
+	line-height: 2;
+	padding: 5px;
+   }
+   article{
+   	border: 1px solid #f5f2f0 ;
+	padding: 10px;
+	padding-left: 20px;
+   }
+   </style>
+</head>
+<body>
+    <main>
+		<h1>gulpを回そう</h1>
+		<saction>
+			<h2>それぞれの簡単な説明</h2>
+			<dl>
+			<dt>Node.js</dt>
+			<dd>ブラウザでしか使えなかったjsを、サーバーサイドでもjs実行させようというもの。<br>
+			特徴<br>
+			- ノンブロッキングi/o データベース参照の時にいちいち止まらないから早い<br>
+			- イベントループ
+			</dd>
+			<dt>npm</dt>
+			<dd>Node Packeged Moduules つまりnode.jsのパッケージ管理ツール。<br>
+			package.jsonファイルをつくってそこで管理する。
+			</dd>
+			<dt>gulp.js</dt>
+			<dd>node.jsをベースとしたビルドシステムヘルパー。gulp.fileにタスクを書く。
+			</dd>
+			</dl>
+	</saction>
+	<saction>
+		<h2>インストール方法</h2>
+		<ol>
+			<li>
+				<p>node.jsのヴァージョンチェック</p>
+				<pre>node -v</pre>
+			</li>
+			<li>
+				<p>package.jsonの作成</p>
+				<p>自力で作成しても、コマンドで作成してもいい。これでnpmによってパッケージのインストールを行います</p>
+				<pre>npm init</pre>
+			</li>
+			<li>
+				<p>gulpのインストール</p>
+				<p>gulpはグローバルにもローカルにもインストールが必要。<br>
+				ローカルにgulpがあることでバージョンがプロジェクトによって違ってもタスクを実行できる。</p>
+				<pre>npm install --save-dev gulp</pre>
+			</li>
+			<li>
+				<p>gulpのチェック</p>
+				<p>下のコマンドでバージョンが出てくれば完了</p>
+				<pre>gulp -v</pre>
+			</li>
+		</ol>
+		<article class="">
+			<h3>ローカルインストールとグローバルインストール</h3>
+			<p>
+				npmはローカルとグローバルでインストールする場所を選べる。<br>
+				ローカルにインストールしたパッケージは、そのプロジェクトのフォルダ内でのみ利用可能。
+				グローバルにインストールした場合は、そのマシン上のどこからでも利用できるようになる。
+				デフォルトでは、ローカルにパッケージがインストールされるようになってる。
+			</p>
+			<p>グローバルインストール</p>
+			<pre>npm install -g パッケージ名</pre>
+			<p>ローカルインストール</p>
+			<pre>npm install パッケージ名</pre>
+		</article>
+		<article class="">
+			<h3>save-devについて</h3>
+			<p>
+				package.jsonでインストールするパッケージの管理をするにはnpm install[-S]を実行する際に--saveまたは--save-dev[-D]というオプションを付ける。
+				--saveは作成しているプログラム自体にそのパッケージが必要なときに。
+				gulpやgulpで使うプラグインなど、開発時だけ必要となるものには--save-devを付けるとよいでしょう。
+			</p>
+			<p>以下二つは同じ。下は省略形</p>
+            <pre>npm intsall --save-dev パッケージ名</pre>
+            <pre>npm intsall -D パッケージ名</pre>
+		</article>
+	</saction>
+	<section>
+		<h2>gulpfile.jsを作ろう</h2>
+        <ol>
+			<li>
+				<p>gulpfile.jsというファイルを作成</p>
+			</li>
+
+            <li>
+				<p>gulp--sassのインストール</p>
+                <pre>npm install -D gulp-sass</pre>
+				<p>（その他パッケージも同じ感じで使う）</p>
+			</li>
+            <li>
+				<p>パッケージ部分の作成</p>
+                <p>インストールしたパッケージの登録</p>
+                <pre>
+var gulp = require('gulp');
+var sass = require('gulp-sass');</pre>
+			</li>
+			<li>
+				<p>タスクの作成</p>
+                <p>gulp.jsのサンプル参照</p>
+			</li>
+		</ol>
+        <article class="">
+            <p>参考サイト　　<a href="https://app.codegrid.net/entry/gulp-1">gulpとは何か</a></p>
+            <p>参考サイト　　<a href="http://creator.dwango.co.jp/9668.html">sassの使い方</a></p>
+        </article>
+	</section>
+    </main>
+</body>
+</html>
