@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html lang="ja" class="lte-ie8 no-js" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"><![endif]-->
+<!--[if (gt IE 8)|!(IE)]><!--><html lang="ja" class="no-js" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"><!--<![endif]-->
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Git知識</title>
+   <style>
+   body {
+	   background-color: #f5f2f0;
+       font-family: Helvetica,"ヒラギノ角ゴ Pro W3",Hiragino Kaku Gothic Pro,"メイリオ",Meiryo,sans-serif;
+	   font-size: 14px;
+	   line-height: 1.8;
+	   margin: 0;
+   }
+   main {
+   		background-color: #FFFFFF;
+		min-height: 100vh;
+	   	width: 650px;
+		padding: 15px;
+		margin: auto;
+   }
+   dt {
+   	font-weight: bold;
+   }
+   pre {
+   	background-color: #f5f2f0;
+	line-height: 2;
+	padding: 5px;
+   }
+   article{
+   	border: 1px solid #f5f2f0 ;
+	padding: 10px;
+	padding-left: 20px;
+   }
+   </style>
+</head>
+<body>
+    <main>
+		<h1>Git周辺知識</h1>
+		<saction>
+			<h2></h2>
+            <dl>
+            <dt>Git</dt>
+            <dd>
+                分散型バージョン管理システムの一つ。
+            </dd>
+            <dt>gitHub</dt>
+            <dd>
+                ソースコード管理システム。gitがついてる。その他にもgitがあるサービスはいろいろある。<br>
+                gitの仕組みを利用して世界中の人が作品を保存公開できるようにしたサービス。<br>
+                backlogにもgit機能ついている。
+            </dd>
+            <dt>sourceTree</dt>
+            <dd>
+                gitを画面で観ながら操作するGUI形式のソフト。
+                <a href="/Users/watanabeminami/Watanabe-library/git-guid/sorcetree.html">sourceTreeガイド</a>
+            </dd>
+            </dl>
+	</saction>
+    <saction>
+        <h2>忘れやすいGit用語集</h2>
+        <dl>
+            <dt>リポジトリ</dt>
+            <dd>ファイルやディレクトリ状態を記録する場所。<br>管理したいディレクトリをリポジトリの管理下に置くことで変更履歴が格納される。</dd>
+            <dt>ワークツリー</dt>
+            <dd>Git管理下に置かれた、実際に作業しているディレクトリのこと。</dd>
+            <dt>インデックス</dt>
+            <dd>リポジトリとワークツリーとの間に存在する。リポジトリにコミットする準備をする場所のこと。sourceTreeだとステージした状態。</dd>
+            <img src="img/img6.png" alt="">
+            <dt>統合ブランチ</dt>
+            <dd>リリースがいつでも可能なようにしておくためのブランチ。そのため安定した状態を保つことが大事。通常masterブランチを統合ブランチにする。</dd>
+        </dl>
+    </saction>
+    </main>
+</body>
+</html>
